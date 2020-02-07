@@ -1,6 +1,7 @@
 // SideBar.js
 
 import React, {Component} from 'react';
+import UserLogo from './Nilesh.png';
 
 export default class SideBar extends Component {
     render(){
@@ -9,7 +10,7 @@ export default class SideBar extends Component {
                 <section className="sidebar">
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                            <img src={UserLogo} className="img-circle" alt="User Image" />
                         </div>
                         <div className="pull-left info">
                             <p>Nilesh Kulkarni</p>

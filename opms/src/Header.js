@@ -1,6 +1,7 @@
 // Header.js
 import React, {Component} from 'react';
 import Logo1 from './OPMS.png';
+import Resizer from 'react-image-file-resizer';
 
 export default class Header extends Component {
     render(){
@@ -16,7 +17,7 @@ export default class Header extends Component {
                             
                                 <div>
                                 
-                                <img src={Logo1} />
+                                <img src={Logo1} width="50px" Height="50px" />
                                 
                                 </ div>
                                 
