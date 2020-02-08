@@ -74,6 +74,19 @@ body :-ms-input-placeholder {
           transition-timing-function: ease-in-put;
   font-weight: 200;
 }
+
+h1 {
+  font-size: 18px;
+  color: rgb(3, 49, 148);
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 14px;
+  color: rgb(3, 49, 148);
+  font-weight: 100;
+}
+
 form {
   padding: 20px 0;
   position: relative;
@@ -93,13 +106,14 @@ form input {
   display: block;
   text-align: center;
   font-size: 18px;
-  color: black;
+  color: rgb(29, 4, 139);
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;
 }
 form input:hover {
   background-color: rgba(255, 255, 255, 0.4);
+  width: 290px;
 }
 form input:focus {
   background-color: white;

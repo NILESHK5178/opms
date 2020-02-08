@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'; 
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import LoginPage from './loginpage';
 import MainPage from './mainpage';
 
@@ -12,21 +12,21 @@ class App extends Component {
     super();
 
     this.state = {
-      loggedInStatus: "Log In",
-      user: {}
+      loggedIn:true,
     }
-  }
+
+    }
+
 
   render() {
   return (    
           <Router>
             <switch>
             <Route exact path="/Login" component ={LoginPage} />
-            <Route exact path="/Mainpage" 
-              render={props => (
-                <MainPage {...props} loggedInStatus={this.state.loggedInStatus} />
-              )}
-            />
+            <Route exact path="/Mainpage"  
+            render = {props => (
+              this.state.loggedIn ?  (<MainPage {...props} />) : (<Redirect to ="/Login" />)
+            )} />
             </switch>
           </Router>  
             

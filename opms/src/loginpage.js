@@ -7,10 +7,11 @@ import Logo1 from './OPMS.png';
 class LoginPage extends Component {
   constructor() {
     super();
-    this.state = {
+       this.state = {
       username: '',
       password: '',
       error: '',
+      
     };
 
     this.handlePassChange = this.handlePassChange.bind(this);
@@ -24,6 +25,9 @@ class LoginPage extends Component {
   }
 
   handleSubmit(evt) {
+
+    this.props.history.push("/Mainpage")
+
     evt.preventDefault();
 
     if (!this.state.username) {
@@ -35,6 +39,7 @@ class LoginPage extends Component {
     }
 
     return this.setState({ error: '' });
+    
   }
 
   handleUserChange(evt) {
@@ -50,9 +55,6 @@ class LoginPage extends Component {
   }
 
   render() {
-    // NOTE: I use data-attributes for easier E2E testing
-    // but you don't need to target those (any css-selector will work)
-
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
