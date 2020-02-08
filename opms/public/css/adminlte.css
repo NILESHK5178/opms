@@ -493,7 +493,7 @@ mark,
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #ffffff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #e8ebee;
   border-radius: 0.25rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   max-width: 100%;
@@ -3294,7 +3294,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #7d6c6c;
   white-space: nowrap;
 }
 
@@ -9933,6 +9933,14 @@ a.text-success:hover, a.text-success:focus {
   color: #19692c !important;
 }
 
+.text-notsuccess {
+  color: #f02a0f !important;
+}
+
+a.text-notsuccess:hover, a.text-success:focus {
+  color: #6e332b !important;
+}
+
 .text-info {
   color: #17a2b8 !important;
 }
@@ -11264,7 +11272,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .content-wrapper {
-  background: #f4f6f9;
+  background: #ffffff;
 }
 
 .content-wrapper > .content {

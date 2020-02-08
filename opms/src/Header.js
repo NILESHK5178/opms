@@ -4,6 +4,10 @@ import Logo1 from './OPMS.png';
 import Resizer from 'react-image-file-resizer';
 
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render(){
         return (
             <header className="main-header">
