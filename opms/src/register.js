@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './login.css';
-import Logo2 from './company_logo.png';
-import Logo1 from './OPMS.png';
+import './register.css';
 import auth from './auth';
+
 
 
 class LoginPage extends Component {
@@ -10,29 +9,36 @@ class LoginPage extends Component {
     super();
        this.state = {
       username: '',
+      cname: '',
+      email: '',
       password: '',
-      error: '',
-      
+      cpassword: '',
+      image: '',
+      cimage: '',
+      error: '',  
     };
+
+      
 
     this.handlePassChange = this.handlePassChange.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.dismissError = this.dismissError.bind(this);
-    this.openregister = this.openregister.bind(this);
   }
+
+  
 
   dismissError() {
     this.setState({ error: '' });
   }
 
-  openregister() {
-    this.props.history.push("/Register")
-  }
-
   handleSubmit(evt) {
+    
+    
+   
+  
     auth.login(() =>{
-      this.props.history.push("/Mainpage")
+      this.props.history.push("/")
     });
     
 
@@ -75,25 +81,38 @@ class LoginPage extends Component {
           }
           
           <center>
-          <img src={Logo1} />
           <br/>
           <h1><label >Operational Parameter Management System</label></h1>
+          
           <br/>
           <h4><label>User Name</label></h4>
           <input type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
-          <br/>
+          
+          <h4><label>Company Name</label></h4>
+          <input type="text" data-test="companyname" value={this.state.cname} onChange={this.handleUserChange} />
+          
+          <h4><label>email</label></h4>
+          <input type="text" data-test="email" value={this.state.email} onChange={this.handleUserChange} />
+          
           <h4><label>Password</label></h4>
           <input type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
           
+          <h4><label>Confirm Password</label></h4>
+          <input type="password" data-test="password" value={this.state.cpassword} onChange={this.handlePassChange} />
+          
+          <h4><label>Image</label></h4>
+          <input type="text" data-test="simage" value={this.state.password} onChange={this.handlePassChange} />
+          <button className="uploadbtn">upload</button>
+          <br/><br/>
+          <h4><label>Company Image</label></h4>
+          <input type="text" data-test="cimage" value={this.state.password} onChange={this.handlePassChange} />
+          <button className="uploadbtn">upload</button>
+          <br/><br/>
           <br/>
-          <button type="submit" value="Log In" data-test="submit">Log In</button>
-          <br/>
+          <button >Register</button>
           </center>
         </form>
 
-          <center>
-          <button onClick={this.openregister}>Register</button>
-          </center>
       </div>
     );
   }

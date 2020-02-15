@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'; 
-import { BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom';
 import LoginPage from './loginpage';
 import MainPage from './mainpage';
+import Register from './register';
+import {ProtectedRoute} from './protectedroute';
 
 
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
-      loggedIn:true,
+      
     }
-
     }
 
 
@@ -22,11 +20,9 @@ class App extends Component {
   return (    
           <Router>
             <switch>
-            <Route exact path="/Login" component ={LoginPage} />
-            <Route exact path="/Mainpage"  
-            render = {props => (
-              this.state.loggedIn ?  (<MainPage {...props} />) : (<Redirect to ="/Login" />)
-            )} />
+            <Route exact path="/" component ={LoginPage} />
+            <ProtectedRoute exact path="/Mainpage" component ={MainPage} />
+            <Route exact path="/Register" component ={Register} />
             </switch>
           </Router>  
             

@@ -2,6 +2,8 @@
 
 import React, {Component} from 'react';
 import UserLogo from './Nilesh.png';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom';
+import auth from './auth';
 
 export default class SideBar extends Component {
     constructor(props) {
@@ -18,7 +20,10 @@ export default class SideBar extends Component {
                         </div>
                         <div className="pull-left info">
                             <p>Nilesh Kulkarni</p>
-                            <a href="#"><i className="fa fa-circle text-success"></i> {this.props.loggedInStatus} </a>
+                            <u><Link onClick ={() => {
+                                auth.logout(() => {                                    
+                                })
+                            }} to= "/">Log out</Link></u>
                         </div>
                     </div>
                     
