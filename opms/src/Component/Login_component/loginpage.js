@@ -1,4 +1,4 @@
-import React, { Component, useState, useContext} from 'react';
+import React, { useState, useContext} from 'react';
 import '../css/login.css';
 import Logo1 from '../images_logos/OPMS.png';
 import Auth from './auth';
@@ -11,7 +11,7 @@ const LoginPage = (props) => {
 
   const[username, setUsername] = useState('');
   const[password, setPassword] = useState('');
-  const[userimage, setUserimage] = useState('');
+
    
   const handleSubmit = (evt) => {  
       evt.preventDefault();
