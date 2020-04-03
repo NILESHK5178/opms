@@ -1,0 +1,14 @@
+.label{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    font-size: 35px;
+    color: #f5f8f7;
+}
+
+.navbar-toggle{
+    width: 5px;
+}

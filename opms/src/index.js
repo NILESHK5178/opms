@@ -1,10 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Component/App';
 import * as serviceWorker from './serviceWorker';
+import useGlobalState from './Component/store/useGlobalState';
+import Context from './Component/store/context';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Index = () => {
+
+    const store = useGlobalState();
+    return(
+        <Context.Provider value = {store}>
+        <App />
+        </Context.Provider>
+
+    )
+}
+
+
+ReactDOM.render(<Index />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
